@@ -24,7 +24,7 @@ private final StatusSignal<Double> intakeCurrent = intakeMotor.getStatorCurrent(
 private final StatusSignal<Double> intakeRPS = intakeMotor.getRotorVelocity();
 private final StatusSignal<Double> intakeTemp = intakeMotor.getDeviceTemp(); //stuff for periodic method
 
-private final TalonFX pivotMotor = new TalonFX(Constants.canIDConstants.otbIntakePivotMotor, "rio" /*this may be wrong */);  //creates motor obj
+private final TalonFX pivotMotor = new TalonFX(Constants.canIDConstants.otbIntakePivotMotor, "canivore");  //creates motor obj
 private final TalonFXConfigurator pivotConfigurator = pivotMotor.getConfigurator();
 private final TalonFXConfiguration pivotConfigs = new TalonFXConfiguration(); //for configs
 private MotionMagicVoltage pivotMotorMotionMagicRequest = new MotionMagicVoltage(0).withSlot(0).withEnableFOC(true);;
