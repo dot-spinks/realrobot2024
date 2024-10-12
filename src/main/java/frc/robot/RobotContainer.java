@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 import frc.robot.indexer.indexer;
@@ -25,13 +26,13 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-   controller.leftTrigger().whileTrue((new InstantCommand(() -> intake.requestIntake(20, 2))));
+   controller.leftTrigger().onTrue((new InstantCommand(() -> intake.requestIntake(20, 2))));
 
-    controller.rightTrigger().whileTrue(new InstantCommand(() -> shooter.requestVelocity(10, 1)));
-    controller.a().whileTrue(new InstantCommand(() -> shooter.requestSetpoint(90)));
+    controller.rightTrigger().onTrue(new InstantCommand(() -> shooter.requestVelocity(10, 1)));
+    controller.a().onTrue(new InstantCommand(() -> shooter.requestSetpoint(20)));
 
-    controller.x().whileTrue(new InstantCommand(() -> indexer.requestIndexerVoltage(2)));
-    controller.y().whileTrue(new InstantCommand(() -> indexer.requestAmpRollerVoltage(2)));
+    controller.x().whileTrue(new RunCommand(() -> indexer.requestIndexerVoltage(2)));
+    controller.y().whileTrue(new RunCommand(() -> indexer.requestAmpRollerVoltage(2)));
   
   }
     public Command getAutonomousCommand() {
