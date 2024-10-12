@@ -26,7 +26,7 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-   controller.leftTrigger().onTrue((new InstantCommand(() -> intake.requestIntake(20, 2))));
+   controller.leftTrigger().onTrue((new InstantCommand(() -> intake.requestPivotSetPoint(20))));
 
     controller.rightTrigger().onTrue(new InstantCommand(() -> shooter.requestVelocity(10, 1)));
     controller.a().onTrue(new InstantCommand(() -> shooter.requestSetpoint(20)));
