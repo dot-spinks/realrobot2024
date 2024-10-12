@@ -89,19 +89,19 @@ public class shooter extends SubsystemBase {
         rightShooterCurrentConfigs.StatorCurrentLimitEnable = true;
 
         var leftShooterSlot0Configs = leftShooterConfigs.Slot0;
-        leftShooterSlot0Configs.kP = 0.0;
+        leftShooterSlot0Configs.kP = 0.775;
         leftShooterSlot0Configs.kI = 0.0;
         leftShooterSlot0Configs.kD = 0.0;
-        leftShooterSlot0Configs.kS = 0.0;
-        leftShooterSlot0Configs.kV = 0.0;
+        leftShooterSlot0Configs.kS = 0.4;
+        leftShooterSlot0Configs.kV = 0.153;
         leftShooterSlot0Configs.kA = 0.0;
 
         var rightShooterSlot0Configs = rightShooterConfigs.Slot0;
-        rightShooterSlot0Configs.kP = 0.0;
+        rightShooterSlot0Configs.kP = 0.775;
         rightShooterSlot0Configs.kI = 0.0;
         rightShooterSlot0Configs.kD = 0.0;
-        rightShooterSlot0Configs.kS = 0.0;
-        rightShooterSlot0Configs.kV = 0.0;
+        rightShooterSlot0Configs.kS = 0.4;
+        rightShooterSlot0Configs.kV = 0.153;
         rightShooterSlot0Configs.kA = 0.0;
 
         var leftArmMotorConfigs = leftArmConfigs.MotorOutput;
@@ -115,19 +115,19 @@ public class shooter extends SubsystemBase {
         leftArmCurrentConfigs.StatorCurrentLimitEnable = true;
 
         var leftArmSlot0Configs = leftArmConfigs.Slot0;
-        leftArmSlot0Configs.kP = 0.0;
+        leftArmSlot0Configs.kP = 10;
         leftArmSlot0Configs.kI = 0.0;
         leftArmSlot0Configs.kD = 0.0;
-        leftArmSlot0Configs.kS = 0.0;
-        leftArmSlot0Configs.kV = 0.0;
-        leftArmSlot0Configs.kA = 0.0;
-        leftArmSlot0Configs.kG = 0.0;
+        leftArmSlot0Configs.kS = 0.23;
+        leftArmSlot0Configs.kV = 0.25;
+        leftArmSlot0Configs.kA = 0.010154;
+        leftArmSlot0Configs.kG = 0.27;
         leftArmSlot0Configs.GravityType = GravityTypeValue.Arm_Cosine;
 
         var motionMagicConfigs = leftArmConfigs.MotionMagic;
-        motionMagicConfigs.MotionMagicCruiseVelocity = 0.0;
-        motionMagicConfigs.MotionMagicAcceleration = 0.0;
-        motionMagicConfigs.MotionMagicJerk = 0.0;
+        motionMagicConfigs.MotionMagicCruiseVelocity = 75;
+        motionMagicConfigs.MotionMagicAcceleration = 150;
+        motionMagicConfigs.MotionMagicJerk = 10000;
 
         var feedbackConfigs = leftArmConfigs.Feedback;
         feedbackConfigs.FeedbackSensorSource = FeedbackSensorSourceValue.RotorSensor;
